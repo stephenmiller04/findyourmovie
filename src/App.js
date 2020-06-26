@@ -103,7 +103,7 @@ class App extends Component {
         <div hidden={this.state.showPopup} className={this.state.movies.length > 0 ? "" : "center-container"}>
           <div className="center-search">
             <h1 className="big-title">Find your movie <FontAwesomeIcon icon={faFilm} /></h1>
-            <form onSubmit={() => this.getMovies(document.getElementById("titleinput").value)} className="search-container" action="#">
+            <form onSubmit={() => this.getMovies(document.getElementById("titleinput").value)} className="search-container" action="javascript:void(0);">
               <input className="search-input" type="text" id="titleinput"/>
               <button className="search-button"><FontAwesomeIcon icon={faSearch} /></button>
             </form>
