@@ -3,7 +3,7 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './style.css';
 import unknownpic from '../unknown.png';
-const API_IMAGE = 'https://image.tmdb.org/t/p/w300_and_h450_bestv2';
+import { API_IMAGE } from '../apidata';
 
 class infoPopup extends React.Component {
     render() {

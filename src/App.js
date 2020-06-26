@@ -2,12 +2,10 @@ import React, { Component } from 'react';
 import InfoPopup from './components/infoPopup';
 import axios from 'axios';
 import unknownpic from './unknown.png'
-import { faSearch, faFilm, faStepForward, faStepBackward, faForward, faBackward, faFrown, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faFilm, faStepForward, faStepBackward, faForward, faBackward, faFrown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './App.css';
-const API_URL = 'https://api.themoviedb.org/3';
-const API_KEY = '3430c7b8503f907229dcee6c68949871';
-const API_IMAGE = 'https://image.tmdb.org/t/p/w300_and_h450_bestv2';
+import { API_URL, API_KEY, API_IMAGE } from './apidata';
 
 class App extends Component {
 
