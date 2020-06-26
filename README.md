@@ -1,4 +1,4 @@
-Live demo: [https://www.stephenmiller.hu](https://www.stephenmiller.hu)
+Live demo: [http://parrotlet.stephenmiller.hu/](http://parrotlet.stephenmiller.hu/)
 
 ### Install
 ```
