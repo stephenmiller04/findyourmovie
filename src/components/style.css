@@ -29,6 +29,11 @@
     margin-left: 10px;
 }
 
+.error-text {
+    text-align: center;
+    color: #c35353;
+}
+
 .data-container {
     width: 50%;
     display: inline-block;

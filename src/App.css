@@ -160,6 +160,31 @@ body {
   color: #61dafb;
 }
 
+.loading-container {
+  width: 90px;
+  height: 90px;
+  margin: auto;
+  padding-top: 30px;
+}
+
+.loading-container.hidden {
+  display: none;
+}
+
+.loading-circle {
+  width: 70px;
+  height: 70px;
+  display: block;
+  border-radius: 50%;
+  border: 10px solid #9da65d;
+  border-right: 10px solid #08080300;
+  animation: App-logo-spin infinite 3s linear;
+}
+
+.loading-circle.hidden {
+  display: none;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

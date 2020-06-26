@@ -22,7 +22,10 @@ class App extends Component {
     movieDesc: "desccucc",
     voteAvg: "",
     releaseDate: "",
-    poster: ""
+    poster: "",
+    error: false,
+    errorData: "",
+    loading: false
   }
 
   togglePopup(title, desc, vote, date, poster) {
@@ -37,6 +40,7 @@ class App extends Component {
   }
 
   getMovies(title, page) {
+    this.setState({ loading: true })
     if (title.length > 0) {
       const url = `${API_URL}/search/movie?api_key=${API_KEY}&query=${title}&page=${page}`;
       axios.get(url).then(response => response.data)
@@ -47,6 +51,13 @@ class App extends Component {
         this.setState({ allPage: data.total_pages })
         this.setState({ search: title })
         this.setState({ gotMovies: true })
+        this.setState({ error: false })
+        this.setState({ loading: false })
+      })
+      .catch(error => {
+        this.setState({ errorData: error.message })
+        this.setState({ error: true })
+        this.setState({ loading: false })
       })
     }
   }
@@ -96,7 +107,11 @@ class App extends Component {
               <input className="search-input" type="text" id="titleinput"/>
               <button className="search-button" onClick={() => this.getMovies(document.getElementById("titleinput").value)}><FontAwesomeIcon icon={faSearch} /></button>
             </div>
+            <p className="error-text" hidden={!this.state.error}>{this.state.errorData}</p>
             <p hidden={this.state.gotMovies && this.state.movies.length == 0 ? false : true} className="no-results-text">Sorry, no results for "{this.state.search}" <FontAwesomeIcon icon={faFrown} /></p>
+            <div className={this.state.movies.length > 0 ? "loading-container hidden" : "loading-container" }>
+              <div className={this.state.loading ? "loading-circle" : "loading-circle hidden" }></div>
+            </div>
           </div>
           <div>
             <div hidden={this.state.movies.length > 0 ? false : true}>
